@@ -1,23 +1,20 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing:border-box;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    list-style: nono;
+    list-style: none;
     text-decoration: none;
 }
-
 :root{
     --red:#d63a25;
     --white:#fff;
     --dark:#1e1c2a;
 }
-
 body{
     color: var(--dark);
     background: var(--white);
 }
-
 .navigation{
     display: flex;
     align-items: center;
@@ -32,7 +29,7 @@ body{
 .navigation .logo{
     color: var(--red);
     font-size: 1.7rem;
-    font-weight: 600;;
+    font-weight: 600;
 }
 .logo span{
     color: var(--dark);
@@ -42,7 +39,7 @@ body{
     align-items: center;
     gap: 5rem;
 }
-.navigation ul li a {
+.navigation ul li a{
     color: var(--dark);
     font-size: 17px;
     font-weight: 500;
@@ -94,32 +91,41 @@ body{
     line-height: 4rem;
 }
 .home-text p{
-    margin-bottom:4rem;
+    margin-bottom: 4rem;
 }
 .home-btn{
     padding: 15px 45px;
     background: var(--red);
     color: var(--white);
     border-radius: 10px;
-    font-size: 700;
+    font-weight: 700;
     transition: all 0.5s;
 }
 .home-btn:hover{
-    background: var(--red);
+    background: #fc4c35;
 }
 .home-img img{
     width: 100%;
 }
-@media(max-width:785px) {
+@media (max-width:785px) {
     .navigation{
         padding: 18px 20px;
     }
     .menu{
-        display:block ;
+        display: block;
+    }
+    .menu.ativo .bar:nth-child(1){
+        transform:  translateY(8px) rotate(45deg);
+    }
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu.ativo .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
     }
     .nav-menu{
         position: fixed;
-        right: 70px;
+        right: -100%;
         top: 70px;
         width: 100%;
         height: 100%;
@@ -128,7 +134,32 @@ body{
         gap: -10px;
         transition: 0.3s;
     }
+    .nav-menu.ativo{
+        right: 0;
+    }
     .nav-item{
         margin: 16px 0;
+    }
+    
+    /*main*/
+    .home{
+        padding: 100px 2%;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+        gap: 5rem;
+    }
+    .home .text-h4{
+        font-size: 15px;
+    }
+    .home .text-h1{
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    .home p{
+        font-size: 15px;
+    }
+    .home-img{
+        width: 125%;
     }
 }
